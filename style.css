@@ -1,0 +1,291 @@
+:root {
+    --font1: 'Bebas Neue', sans-serif;
+    --font2: 'Fira Code', sans-serif;
+    
+    --color1: linear-gradient(to right, #001AFF, #00C2FF);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    box-sizing: border-box;
+}
+
+/* Home Start */
+.home {
+    background: #000;
+    width: 100%;
+    height: 100%;
+}
+
+/* Navbar Start */
+.navbar {
+    right: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    border: 2px solid #00fff0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    z-index: 999;
+}
+
+.nav-link {
+    margin: 0 10px;
+    font-size: 20px;
+    font-family: var(--font1);
+    margin: 0 10px 0 10px;
+    position: relative;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: cyan;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+/* Navbar End */
+
+/* Page Start */
+.page {
+    color: azure;
+    position: relative;
+    text-align: center;
+    padding-top: 260px;
+    padding-bottom: 180px;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px cyan, 0 0 25px blue, 0 0 5px darkblue;
+    background-image: url('assets/star-background.jpg');
+    background-position: center;
+}
+/* Page End */
+/* Home End */
+
+/* Text Start */
+.text {
+    background-color: #000;
+    background-image: url('assets/home-page.jpg');
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.hikayat-text {
+    color: black;
+    font-size: 18px;
+    font-family: sans-serif;
+    background-image: url('assets/hikayat-back2.jpg');
+    background-size: 100%;
+    /* background-color: rgba(224, 149, 57, 0.219); */
+    padding: 30px;
+    border: 2px solid;
+    animation: boxShadow 2s infinite;
+    text-indent: 50px;
+    width: 900px;
+    height: 500px;
+    overflow: auto;
+}
+/* Text End */
+
+/* Analisis Start */
+.analisis {
+    padding: 180px 40px;
+    background-color: #000;
+    background-image: url('assets/galaxy.jpg');
+    background-position: center;
+}
+
+.analisis h1 {
+    font-size: 30px;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to bottom, blue, cyan);
+    text-align: center;
+}
+
+.card-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    font-family: var(--font2);
+    width: 500px;
+    opacity: 0.5;
+    transition-duration: 0.5s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 white, 0 6px 20px 0 white;
+    transform: translateY(-10px);
+    transition-duration: 0.5s;
+    opacity: 1;
+}
+
+#analisis-title {
+    color: #000;
+    text-shadow: 0 0 2px white;
+}
+/* Analisis End */
+
+/* Profile Start */
+.profile {
+    background-color: #000;
+    background-image: url(assets/backAnalisis.png);
+    background-position: center;
+    padding: 250px 40px;
+    align-items: center;
+}
+
+.card-wrapper {
+    mask: linear-gradient(90deg, transparent, white 2%, white 80%, transparent);
+
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 5%,
+    white 95%,
+    transparent
+  );
+
+  position: relative;
+  display: flex;
+  height: 11rem;
+  overflow: hidden;
+}
+
+.card-profile {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    animation: moveProfile 40s linear infinite;
+    width: fit-content;
+}
+
+.cards img {
+    width: 130px;
+    height: 100px;
+    border-radius: 60px;
+    background-color: grey;
+}
+
+.cards h2 {
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    font-family: "Victor Mono";
+    width: 100%;
+}
+
+.card-wrapper .cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 100px;
+    background-color: white;
+    color: #000;
+    padding: 20px;
+    box-shadow: 0 0 7px grey, 0 0 5px white;
+    margin: 10px;
+    transition-duration: 0.5s;
+}
+
+.card-wrapper .card-profile:has(.cards:hover) {
+    animation-play-state: paused;
+}
+
+.card-wrapper .cards:hover {
+    transform: scale(1.1);
+}
+
+#profile-title {
+    font-size: 36px;
+    color: #000;
+    text-shadow: 0 0 3px white;
+    text-align: center;
+}
+/* Profile End */
+
+/* Keyframe Function Start */
+@keyframes boxShadow {
+    0% {
+        box-shadow: 0 0 5px white;
+    }
+    10% {
+        box-shadow: 0 0 10px white;
+    }
+    20% {
+        box-shadow: 0 0 15px white;
+    }
+    30% {
+        box-shadow: 0 0 20px white;
+    }
+    40% {
+        box-shadow: 0 0 25px white;
+    }
+    50% {
+        box-shadow: 0 0 30px white;
+    }
+    60% {
+        box-shadow: 0 0 25px white;
+    }
+    70% {
+        box-shadow: 0 0 20px white;
+    }
+    80% {
+        box-shadow: 0 0 15px white;
+    }
+    90% {
+        box-shadow: 0 0 10px white;
+    }
+    100% {
+        box-shadow: 0 0 5px white;
+    }
+}
+
+@keyframes moveProfile {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+#respon {
+    display: none;
+}
+
+@media screen and (max-width: 740px) {
+    #respon {
+        display: flex;
+        color: aliceblue;
+        margin: 0;
+    }
+  
+    body *:not(#respon) {
+        display: none;
+    }
+  }
+/* Keyframe Function End */
